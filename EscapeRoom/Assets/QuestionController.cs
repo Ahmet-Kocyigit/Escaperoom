@@ -24,14 +24,10 @@ public class QuestionController : MonoBehaviour {
     public AudioSource source;
 
     public AudioClip clipWrong;
-    public AudioSource sourceWrong;
 
     void Start ()
 	{
         ChangeQuestion();
-	    source.clip = clip;
-
-	    sourceWrong.clip = clipWrong;
 	}
 	
 	// Update is called once per frame
@@ -91,6 +87,7 @@ public class QuestionController : MonoBehaviour {
                 console1.transform.GetChild(0).gameObject.GetComponent<TextMeshPro>().text = String.Empty;
                 console2.transform.GetChild(0).gameObject.GetComponent<TextMeshPro>().text = String.Empty;
                 console3.transform.GetChild(0).gameObject.GetComponent<TextMeshPro>().text = String.Empty;
+                source.clip = clip;
                 source.Play();
 
                 canAnswer = false;
@@ -98,7 +95,8 @@ public class QuestionController : MonoBehaviour {
             else
             {
                 ChangeQuestion();
-                sourceWrong.Play();
+                source.clip = clipWrong;
+                source.Play();
             }
         }
 
