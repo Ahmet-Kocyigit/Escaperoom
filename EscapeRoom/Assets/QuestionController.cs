@@ -12,6 +12,8 @@ public class QuestionController : MonoBehaviour {
     private string currentQuestion;
     private int[] answers = new int[3];
     public int correctAnswer;
+
+    private Boolean canAnswer = true;
     
 
     public  GameObject console1;
@@ -81,18 +83,25 @@ public class QuestionController : MonoBehaviour {
 
     public void CheckAnswer(int value)
     {
-        if (value == answers[correctAnswer])
+        if (canAnswer)
         {
-            GetComponent<TextMesh>().text = "CORRECT !";
-            console1.transform.GetChild(0).gameObject.GetComponent<TextMeshPro>().text = "Correct";
-            console2.transform.GetChild(0).gameObject.GetComponent<TextMeshPro>().text = "Correct";
-            console3.transform.GetChild(0).gameObject.GetComponent<TextMeshPro>().text = "Correct";
-            source.Play();
+            if (value == answers[correctAnswer])
+            {
+                GetComponent<TextMesh>().text = "CORRECT !";
+                console1.transform.GetChild(0).gameObject.GetComponent<TextMeshPro>().text = String.Empty;
+                console2.transform.GetChild(0).gameObject.GetComponent<TextMeshPro>().text = String.Empty;
+                console3.transform.GetChild(0).gameObject.GetComponent<TextMeshPro>().text = String.Empty;
+                source.Play();
+
+                canAnswer = false;
+            }
+            else
+            {
+                ChangeQuestion();
+                sourceWrong.Play();
+            }
         }
-        else
-        {
-            ChangeQuestion();
-            sourceWrong.Play();
-        }
+
+        
     }
 }
