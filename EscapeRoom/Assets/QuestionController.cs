@@ -83,7 +83,7 @@ public class QuestionController : MonoBehaviour {
         {
             if (value == answers[correctAnswer])
             {
-                GetComponent<TextMesh>().text = "CORRECT !";
+                GetComponent<TextMesh>().text = "I Have Had It With These Motherf*cking Snakes On This Motherf*cking Plane!";
                 console1.transform.GetChild(0).gameObject.GetComponent<TextMeshPro>().text = String.Empty;
                 console2.transform.GetChild(0).gameObject.GetComponent<TextMeshPro>().text = String.Empty;
                 console3.transform.GetChild(0).gameObject.GetComponent<TextMeshPro>().text = String.Empty;
