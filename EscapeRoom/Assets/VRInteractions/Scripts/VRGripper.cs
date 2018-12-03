@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using Valve.VR;
 
 /// <summary>
 /// VR gripper. Component goes on the controller. It is used to make physics joint connections with objects in the scene. Also handles haptic feedback along those connections

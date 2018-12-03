@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using Valve.VR;
 
 /// <summary>
 /// VR adds a grippable handle to the lever. Makes the lever attachable to the VR controller.

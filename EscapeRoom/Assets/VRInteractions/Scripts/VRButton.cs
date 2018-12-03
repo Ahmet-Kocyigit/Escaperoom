@@ -12,7 +12,8 @@ public class VRButtonEvent : UnityEvent<VRButton> {}
 /// <summary>
 /// VR Button. Behaves like a UI button, but exists as a physical button for you to push in VR
 /// </summary>
-public class VRButton : VRInteractable {
+public class VRButton : VRInteractable
+{
 
 	/// <summary>
 	/// Callbacks for button pressed event
@@ -36,6 +37,7 @@ public class VRButton : VRInteractable {
 		
 		if (Interactable == true && _collision.collider.name == "Switch") {
 			TriggerButton (); // If the button hit's the contact switch it has been pressed
+		    int test = 1;
 		} else if (_collision.rigidbody == null)
 			return;
 
