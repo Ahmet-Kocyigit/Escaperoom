@@ -1087,7 +1087,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.502
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1467,6 +1467,8 @@ MonoBehaviour:
   console3: {fileID: 1386292140622186}
   clip: {fileID: 8300000, guid: f330949066bae124bab6636f4a7a898e, type: 3}
   source: {fileID: 82561846944295500}
+  clipWrong: {fileID: 8300000, guid: 602181e3c1e52844a9694ad83c5439b1, type: 3}
+  sourceWrong: {fileID: 82561846944295500}
 --- !u!114 &114414209846789756
 MonoBehaviour:
   m_ObjectHideFlags: 1

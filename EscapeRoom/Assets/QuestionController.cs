@@ -21,10 +21,15 @@ public class QuestionController : MonoBehaviour {
     public AudioClip clip;
     public AudioSource source;
 
+    public AudioClip clipWrong;
+    public AudioSource sourceWrong;
+
     void Start ()
 	{
         ChangeQuestion();
 	    source.clip = clip;
+
+	    sourceWrong.clip = clipWrong;
 	}
 	
 	// Update is called once per frame
@@ -79,11 +84,15 @@ public class QuestionController : MonoBehaviour {
         if (value == answers[correctAnswer])
         {
             GetComponent<TextMesh>().text = "CORRECT !";
+            console1.transform.GetChild(0).gameObject.GetComponent<TextMeshPro>().text = "Correct";
+            console2.transform.GetChild(0).gameObject.GetComponent<TextMeshPro>().text = "Correct";
+            console3.transform.GetChild(0).gameObject.GetComponent<TextMeshPro>().text = "Correct";
             source.Play();
         }
         else
         {
             ChangeQuestion();
+            sourceWrong.Play();
         }
     }
 }
