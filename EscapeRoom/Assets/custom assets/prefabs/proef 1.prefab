@@ -58,6 +58,7 @@ GameObject:
   - component: {fileID: 33856789443062310}
   - component: {fileID: 23140079190570476}
   - component: {fileID: 65677164992871962}
+  - component: {fileID: 114001546905348650}
   m_Layer: 0
   m_Name: console
   m_TagString: Untagged
@@ -1114,6 +1115,18 @@ TextMesh:
   m_Color:
     serializedVersion: 2
     rgba: 4294967295
+--- !u!114 &114001546905348650
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1209132874002182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22b438c3ba36e594590805a8f4d4e4f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  QuestionController: {fileID: 0}
 --- !u!114 &114034395305034214
 MonoBehaviour:
   m_ObjectHideFlags: 1
