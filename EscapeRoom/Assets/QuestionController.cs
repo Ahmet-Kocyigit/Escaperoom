@@ -4,13 +4,15 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using Object = System.Object;
+using Random = System.Random;
 
 public class QuestionController : MonoBehaviour {
 
 	// Use this for initialization
-    private String[] questions = new []{"0110 1000 + 0010 0011","0000 0000 + 0000 0000", "0000 0000 + 0000 0000"};
-    private int[] solutions1 = new[] {56, 64, 80};
-    private int currentQuestion;
+    private string currentQuestion;
+    private int[] answers = new int[3];
+    public int correctAnswer;
+    
 
     public  GameObject console1;
     public GameObject console2;
@@ -18,13 +20,7 @@ public class QuestionController : MonoBehaviour {
 
     void Start ()
 	{
-	    currentQuestion = 0;
-
-	    GameObject.Find("console").transform.GetChild(0).gameObject.GetComponent<TextMeshPro>().text = solutions1[0].ToString();
-        GameObject.Find("console2").transform.GetChild(0).gameObject.GetComponent<TextMeshPro>().text = solutions1[1].ToString();
-        GameObject.Find("console3").transform.GetChild(0).gameObject.GetComponent<TextMeshPro>().text = solutions1[2].ToString();
-
-        GetComponent<TextMesh>().text = questions[currentQuestion];
+        ChangeQuestion();
     }
 	
 	// Update is called once per frame
@@ -34,17 +30,49 @@ public class QuestionController : MonoBehaviour {
 
     private void ChangeQuestion()
     {
-        currentQuestion++;
-        if (currentQuestion >= 3)
+       Random r = new Random();
+        int number1 = r.Next(100);
+        int number2 = r.Next(100);
+
+        int solution = number1 + number2;
+        int wrong1 = solution - r.Next(15);
+        int wrong2 = solution + r.Next(12);
+
+        int startIndex = r.Next(3);
+        answers[startIndex] = solution;
+        correctAnswer = startIndex;
+        
+        
+            startIndex++;
+            if (startIndex == 3)
+            {
+                startIndex = 0;
+            }
+
+        answers[startIndex] = wrong1;
+
+        startIndex++;
+        if (startIndex == 3)
         {
-            currentQuestion = 0;
-            GetComponent<TextMesh>().text = questions[currentQuestion];
+            startIndex = 0;
         }
+
+        answers[startIndex] = wrong2;
+
+
+
+        currentQuestion = Convert.ToString(number1, 2) + " + " + Convert.ToString(number2, 2) + " = ?";
+
+
+        console1.transform.GetChild(0).gameObject.GetComponent<TextMeshPro>().text = answers[0].ToString();
+        console2.transform.GetChild(0).gameObject.GetComponent<TextMeshPro>().text = answers[1].ToString();
+        console3.transform.GetChild(0).gameObject.GetComponent<TextMeshPro>().text = answers[2].ToString();
+        GetComponent<TextMesh>().text = currentQuestion;
     }
 
     public void CheckAnswer(int value)
     {
-        if (value == solutions1[currentQuestion])
+        if (value == answers[correctAnswer])
         {
             GetComponent<TextMesh>().text = "CORRECT !";
         }
