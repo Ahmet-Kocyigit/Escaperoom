@@ -44,7 +44,7 @@ public class QuestionController : MonoBehaviour {
 
     public void CheckAnswer(int value)
     {
-        if (value == solutions[currentQuestion])
+        if (value == solutions1[currentQuestion])
         {
             GetComponent<TextMesh>().text = "CORRECT !";
         }
