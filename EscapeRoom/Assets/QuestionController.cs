@@ -18,10 +18,14 @@ public class QuestionController : MonoBehaviour {
     public GameObject console2;
     public GameObject console3;
 
+    public AudioClip clip;
+    public AudioSource source;
+
     void Start ()
 	{
         ChangeQuestion();
-    }
+	    source.clip = clip;
+	}
 	
 	// Update is called once per frame
 	void Update () {
@@ -75,6 +79,7 @@ public class QuestionController : MonoBehaviour {
         if (value == answers[correctAnswer])
         {
             GetComponent<TextMesh>().text = "CORRECT !";
+            source.Play();
         }
         else
         {
