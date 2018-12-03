@@ -20,9 +20,9 @@ public class QuestionController : MonoBehaviour {
 	{
 	    currentQuestion = 0;
 
-	    GameObject.Find("console").GetComponent<TextMeshPro>().text = solutions1[0].ToString();
-	    GameObject.Find("console2").GetComponent<TextMeshPro>().text = solutions1[1].ToString();
-	    GameObject.Find("console3").GetComponent<TextMeshPro>().text = solutions1[2].ToString();
+	    GameObject.Find("console").transform.GetChild(0).gameObject.GetComponent<TextMeshPro>().text = solutions1[0].ToString();
+        GameObject.Find("console2").transform.GetChild(0).gameObject.GetComponent<TextMeshPro>().text = solutions1[1].ToString();
+        GameObject.Find("console3").transform.GetChild(0).gameObject.GetComponent<TextMeshPro>().text = solutions1[2].ToString();
 
         GetComponent<TextMesh>().text = questions[currentQuestion];
     }
