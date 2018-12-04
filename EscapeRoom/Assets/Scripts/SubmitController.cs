@@ -13,18 +13,14 @@ public class SubmitController : MonoBehaviour
     public Light light5;
 
     public GameObject messageScreen;
-
-    public GameObject object1;
-    public GameObject object2;
-    public GameObject object3;
-    public GameObject object4;
-    public GameObject object5;
+    
 
     public string answer;
+    public string correctAnswer;
 
     public string errormessage;
 
-    private int counter = 0;
+    private int counter = 1;
 
 
     // Use this for initialization
@@ -47,8 +43,9 @@ public class SubmitController : MonoBehaviour
             return;
         }
 
-        if (false) //when the wrong sequence is entered false needs to be replaced
+        if (answer!=correctAnswer) //when the wrong sequence is entered false needs to be replaced
         {
+            counter = 1;
             light1 = light1.GetComponent<Light>();
             light1.intensity = 1.13f;
             light1.color = Color.white;
@@ -64,7 +61,6 @@ public class SubmitController : MonoBehaviour
             light5 = light5.GetComponent<Light>();
             light5.intensity = 1.13f;
             light5.color = Color.white;
-
 
         }
         else
@@ -85,8 +81,51 @@ public class SubmitController : MonoBehaviour
             light5.intensity = 1.13f;
             light5.color = Color.green;
 
+            counter = 1;
+
         }
 
         return;
+    }
+
+    public void addAnswer(string value)
+    {
+        if (counter < 5)
+        {
+            return;
+        }
+
+        this.answer += value;
+
+        switch (counter)
+        {
+            case 1:
+                light1 = light1.GetComponent<Light>();
+                light1.intensity = 1.13f;
+                light1.color = Color.blue;
+                break;
+            case 2:
+                light2 = light1.GetComponent<Light>();
+                light2.intensity = 1.13f;
+                light2.color = Color.blue;
+                break;
+            case 3:
+                light3 = light1.GetComponent<Light>();
+                light3.intensity = 1.13f;
+                light3.color = Color.blue;
+                break;
+            case 4:
+                light4 = light1.GetComponent<Light>();
+                light4.intensity = 1.13f;
+                light4.color = Color.blue;
+                break;
+            case 5:
+                light5 = light1.GetComponent<Light>();
+                light5.intensity = 1.13f;
+                light5.color = Color.blue;
+                break;
+        }
+
+        counter++;
     }
 }
