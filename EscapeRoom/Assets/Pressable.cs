@@ -28,10 +28,10 @@ public class Pressable : MonoBehaviour {
         light2 = GameObject.Find("light_wall_2").transform.GetChild(0).GetComponent<Light>();
         light3 = GameObject.Find("light_wall_3").transform.GetChild(0).GetComponent<Light>();
         light4 = GameObject.Find("light_wall_4").transform.GetChild(0).GetComponent<Light>();
-        samText = GameObject.Find("decorative_table_glass 1").transform.GetChild(0).GetComponent<TextMeshPro>();
-        obamaText = GameObject.Find("decorative_table_glass 1").transform.GetChild(1).GetComponent<TextMeshPro>();
-        liamText = GameObject.Find("decorative_table_glass 1").transform.GetChild(2).GetComponent<TextMeshPro>();
-        morganText = GameObject.Find("decorative_table_glass 1").transform.GetChild(3).GetComponent<TextMeshPro>();
+        samText = GameObject.Find("decorative_table_glass 1").transform.GetChild(0).GetChild(0).GetComponent<TextMeshPro>();
+        obamaText = GameObject.Find("decorative_table_glass 1").transform.GetChild(1).GetChild(0).GetComponent<TextMeshPro>();
+        liamText = GameObject.Find("decorative_table_glass 1").transform.GetChild(2).GetChild(0).GetComponent<TextMeshPro>();
+        morganText = GameObject.Find("decorative_table_glass 1").transform.GetChild(3).GetChild(0).GetComponent<TextMeshPro>();
     }
 
     // Update is called once per frame
