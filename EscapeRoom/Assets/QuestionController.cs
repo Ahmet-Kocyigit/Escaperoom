@@ -49,6 +49,8 @@ public class QuestionController : MonoBehaviour {
         {
             source.Play();
             //open box
+            GetComponent<TextMesh>().text = "Correct!";
+
         }
     }
 }
