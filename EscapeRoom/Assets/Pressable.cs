@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Experimental.GlobalIllumination;
 using Valve.VR;
@@ -14,11 +15,23 @@ public class Pressable : MonoBehaviour {
     private Light light2;
     private Light light3;
     private Light light4;
+    private TextMeshPro samText;
+    private TextMeshPro obamaText;
+    private TextMeshPro liamText;
+    private TextMeshPro morganText;
+    private const float INTENSELIGHT = 5f;
 
     // Use this for initialization
     void Start ()
     {
-
+        light1 = GameObject.Find("light_wall_1").transform.GetChild(0).GetComponent<Light>();
+        light2 = GameObject.Find("light_wall_2").transform.GetChild(0).GetComponent<Light>();
+        light3 = GameObject.Find("light_wall_3").transform.GetChild(0).GetComponent<Light>();
+        light4 = GameObject.Find("light_wall_4").transform.GetChild(0).GetComponent<Light>();
+        samText = GameObject.Find("decorative_table_glass 1").transform.GetChild(0).GetComponent<TextMeshPro>();
+        obamaText = GameObject.Find("decorative_table_glass 1").transform.GetChild(1).GetComponent<TextMeshPro>();
+        liamText = GameObject.Find("decorative_table_glass 1").transform.GetChild(2).GetComponent<TextMeshPro>();
+        morganText = GameObject.Find("decorative_table_glass 1").transform.GetChild(3).GetComponent<TextMeshPro>();
     }
 
     // Update is called once per frame
@@ -45,18 +58,20 @@ public class Pressable : MonoBehaviour {
                     transform.Rotate(180, 0, 0);
                     CanPress = false;
                     IsOn = true;
-                    light1 = GameObject.Find("light_wall_1").transform.GetChild(0).GetComponent<Light>();
-                    light1.intensity = 5;
+                    
+                    light1.intensity = INTENSELIGHT;
                     light1.color = Color.magenta;
-                    light2 = GameObject.Find("light_wall_2").transform.GetChild(0).GetComponent<Light>();
-                    light2.intensity = 5;
+                    light2.intensity = INTENSELIGHT;
                     light2.color = Color.magenta;
-                    light3 = GameObject.Find("light_wall_3").transform.GetChild(0).GetComponent<Light>();
-                    light3.intensity = 5;
+                    light3.intensity = INTENSELIGHT;
                     light3.color = Color.magenta;
-                    light4 = GameObject.Find("light_wall_4").transform.GetChild(0).GetComponent<Light>();
-                    light4.intensity = 5;
+                    light4.intensity = INTENSELIGHT;
                     light4.color = Color.magenta;
+                    
+                    samText.text = "3456";
+                    obamaText.text = "9874";
+                    liamText.text = "3458";
+                    morganText.text = "2255";
                 }
             }
             else
@@ -66,18 +81,20 @@ public class Pressable : MonoBehaviour {
                     transform.Rotate(180, 0, 0);
                     CanPress = false;
                     IsOn = false;
-                    light1 = GameObject.Find("light_wall_1").transform.GetChild(0).GetComponent<Light>();
+
                     light1.intensity = 1.13f;
                     light1.color = Color.white;
-                    light2 = GameObject.Find("light_wall_2").transform.GetChild(0).GetComponent<Light>();
                     light2.intensity = 1.13f;
                     light2.color = Color.white;
-                    light3 = GameObject.Find("light_wall_3").transform.GetChild(0).GetComponent<Light>();
                     light3.intensity = 1.13f;
                     light3.color = Color.white;
-                    light4 = GameObject.Find("light_wall_4").transform.GetChild(0).GetComponent<Light>();
                     light4.intensity = 1.13f;
                     light4.color = Color.white;
+
+                    samText.text = "";
+                    obamaText.text = "";
+                    liamText.text = "";
+                    morganText.text = "";
                 }
             }
            
