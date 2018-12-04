@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Experimental.GlobalIllumination;
 using Valve.VR;
 
 public class Pressable : MonoBehaviour {
@@ -9,11 +10,15 @@ public class Pressable : MonoBehaviour {
     private float timer = 0f;
     private bool CanPress = true;
     private bool IsOn = false;
+    private Light light1;
+    private Light light2;
+    private Light light3;
+    private Light light4;
 
     // Use this for initialization
     void Start ()
     {
-        RenderSettings.ambientLight = Color.white;
+
     }
 
     // Update is called once per frame
@@ -40,7 +45,14 @@ public class Pressable : MonoBehaviour {
                     transform.Rotate(180, 0, 0);
                     CanPress = false;
                     IsOn = true;
-                    RenderSettings.ambientLight = Color.magenta;
+                    light1 = GameObject.Find("light_wall_1").transform.GetChild(0).GetComponent<Light>();
+                    light1.color = Color.magenta;
+                    light2 = GameObject.Find("light_wall_2").transform.GetChild(0).GetComponent<Light>();
+                    light2.color = Color.magenta;
+                    light3 = GameObject.Find("light_wall_3").transform.GetChild(0).GetComponent<Light>();
+                    light3.color = Color.magenta;
+                    light4 = GameObject.Find("light_wall_4").transform.GetChild(0).GetComponent<Light>();
+                    light4.color = Color.magenta;
                 }
             }
             else
