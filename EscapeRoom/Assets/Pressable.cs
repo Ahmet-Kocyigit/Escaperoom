@@ -15,7 +15,9 @@ public class Pressable : MonoBehaviour {
     private Light light2;
     private Light UvLight;
     private LightCollision lightCollider;
-    
+    public AudioClip clip;
+    public AudioSource source;
+
     private const float INTENSELIGHT = 3f;
 
     // Use this for initialization
@@ -24,7 +26,7 @@ public class Pressable : MonoBehaviour {
         light1 = GameObject.Find("CeilingLight").transform.GetChild(0).GetComponent<Light>();
         light2 = GameObject.Find("CeilingLight2").transform.GetChild(0).GetComponent<Light>();
         UvLight = GameObject.Find("UVLight").transform.GetChild(0).GetComponent<Light>();
-        lightCollider = UvLight.transform.GetChild(0).GetComponent<LightCollision>();
+        lightCollider = GameObject.Find("UVLight").transform.GetChild(0).GetComponent<LightCollision>();
     }
 
     // Update is called once per frame
@@ -44,10 +46,13 @@ public class Pressable : MonoBehaviour {
     void OnCollisionEnter(Collision collision){
         if (CanPress)
         {
+            source.clip = clip;
             if (!IsOn)
             {
                 if (SteamVR_Input.__actions_default_in_GrabPinch.GetStateDown(SteamVR_Input_Sources.Any))
                 {
+                    source.Play();
+
                     transform.Rotate(180, 0, 0);
                     CanPress = false;
                     IsOn = true;
@@ -63,6 +68,7 @@ public class Pressable : MonoBehaviour {
             {
                 if (SteamVR_Input.__actions_default_in_GrabPinch.GetStateDown(SteamVR_Input_Sources.Any))
                 {
+                    source.Play();
                     transform.Rotate(180, 0, 0);
                     CanPress = false;
                     IsOn = false;

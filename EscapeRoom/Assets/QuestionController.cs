@@ -10,10 +10,12 @@ public class QuestionController : MonoBehaviour {
 
 	// Use this for initialization
     private string currentQuestion;
-    private int[] answers = new int[3];
-    public int correctAnswer;
 
     private Boolean canAnswer = true;
+
+    private bool[] corrects = {false, false, false};
+
+    private string[] answers = {"session", "transport", "network"};
     
 
     public  GameObject console1;
@@ -23,11 +25,10 @@ public class QuestionController : MonoBehaviour {
     public AudioClip clip;
     public AudioSource source;
 
-    public AudioClip clipWrong;
-
     void Start ()
 	{
-        ChangeQuestion();
+	    GetComponent<TextMesh>().text = "What is missing?" + Environment.NewLine + "1. application" + Environment.NewLine + "2. Presentation" + Environment.NewLine + "3. ?" + Environment.NewLine + "4. ?" + Environment.NewLine + "5. ?" + Environment.NewLine + "6. Data link" + Environment.NewLine + "7. Physical";
+	    source.clip = clip;
 	}
 	
 	// Update is called once per frame
@@ -35,71 +36,21 @@ public class QuestionController : MonoBehaviour {
 
     }
 
-    private void ChangeQuestion()
+   
+
+    public void CheckAnswer(string value, int consoleNumber)
     {
-       Random r = new Random();
-        int number1 = r.Next(100);
-        int number2 = r.Next(100);
-
-        int solution = number1 + number2;
-        int wrong1 = solution - r.Next(15);
-        int wrong2 = solution + r.Next(12);
-
-        int startIndex = r.Next(3);
-        answers[startIndex] = solution;
-        correctAnswer = startIndex;
-        
-        
-            startIndex++;
-            if (startIndex == 3)
-            {
-                startIndex = 0;
-            }
-
-        answers[startIndex] = wrong1;
-
-        startIndex++;
-        if (startIndex == 3)
+        if (value == answers[consoleNumber])
         {
-            startIndex = 0;
+            corrects[consoleNumber] = true;
         }
 
-        answers[startIndex] = wrong2;
-
-
-
-        currentQuestion = Convert.ToString(number1, 2) + " + " + Convert.ToString(number2, 2) + " = ?";
-
-
-        console1.transform.GetChild(0).gameObject.GetComponent<TextMeshPro>().text = answers[0].ToString();
-        console2.transform.GetChild(0).gameObject.GetComponent<TextMeshPro>().text = answers[1].ToString();
-        console3.transform.GetChild(0).gameObject.GetComponent<TextMeshPro>().text = answers[2].ToString();
-        GetComponent<TextMesh>().text = currentQuestion;
-    }
-
-    public void CheckAnswer(int value)
-    {
-        if (canAnswer)
+        if (corrects[0] && corrects[1] && corrects[2])
         {
-            if (value == answers[correctAnswer])
-            {
-                GetComponent<TextMesh>().text = "I Have Had It With \n These Motherf*cking Snakes \n On This Motherf*cking Plane!";
-                console1.transform.GetChild(0).gameObject.GetComponent<TextMeshPro>().text = String.Empty;
-                console2.transform.GetChild(0).gameObject.GetComponent<TextMeshPro>().text = String.Empty;
-                console3.transform.GetChild(0).gameObject.GetComponent<TextMeshPro>().text = String.Empty;
-                source.clip = clip;
-                source.Play();
+            source.Play();
+            //open box
+            GetComponent<TextMesh>().text = "Correct!";
 
-                canAnswer = false;
-            }
-            else
-            {
-                ChangeQuestion();
-                source.clip = clipWrong;
-                source.Play();
-            }
         }
-
-        
     }
 }

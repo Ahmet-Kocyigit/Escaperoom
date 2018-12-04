@@ -34,7 +34,8 @@ public class ConsoleController : MonoBehaviour
     {
         if (CanAnswer)
         {
-            GameObject.Find("big_screen").transform.GetChild(0).GetComponent<QuestionController>().CheckAnswer(Convert.ToInt32(transform.GetChild(0).GetComponent<TextMeshPro>().text));
+            int console = Convert.ToInt32(GetComponent<ValueController>().value);
+            GameObject.Find("big_screen").transform.GetChild(0).GetComponent<QuestionController>().CheckAnswer(col.gameObject.GetComponent<ValueController>().value,console);
             CanAnswer = false;
         }
     }
