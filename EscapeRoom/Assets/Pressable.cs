@@ -63,9 +63,13 @@ public class Pressable : MonoBehaviour {
                     UvLight.intensity = INTENSELIGHT;
 
                     samText.text = "3456";
+                    samText.color = Color.magenta;
                     obamaText.text = "9874";
+                    obamaText.color = Color.magenta;
                     liamText.text = "3458";
+                    liamText.color = Color.magenta;
                     morganText.text = "2255";
+                    morganText.color = Color.magenta;
                 }
             }
             else
@@ -78,6 +82,7 @@ public class Pressable : MonoBehaviour {
                     
                     light1.color = Color.white;
                     light2.color = Color.white;
+                    UvLight.color = Color.black;
 
                     samText.text = "";
                     obamaText.text = "";
