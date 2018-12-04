@@ -29,19 +29,19 @@ public class LightCollision : MonoBehaviour {
         {
             switch (collision.collider.gameObject.name)
             {
-                case "samual":
+                case "Samuel":
                     samText.text = "3456";
                     samText.color = Color.magenta;
                     break;
-                case "morgan":
+                case "Morgan":
                     morganText.text = "2255";
                     morganText.color = Color.magenta;
                     break;
-                case "liam":
+                case "Liam":
                     liamText.text = "3458";
                     liamText.color = Color.magenta;
                     break;
-                case "obama":
+                case "Obama":
                     obamaText.text = "9874";
                     obamaText.color = Color.magenta;
                     break;
@@ -58,16 +58,16 @@ public class LightCollision : MonoBehaviour {
         {
             switch (collision.collider.gameObject.name)
             {
-                case "samual":
+                case "Samuel":
                     samText.text = "";
                     break;
-                case "morgan":
+                case "Morgan":
                     morganText.text = "";
                     break;
-                case "liam":
+                case "Liam":
                     liamText.text = "";
                     break;
-                case "obama":
+                case "Obama":
                     obamaText.text = "";
                     break;
                 default:
