@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Experimental.GlobalIllumination;
 using Valve.VR;
@@ -14,10 +15,10 @@ public class Pressable : MonoBehaviour {
     private Light light2;
     private Light light3;
     private Light light4;
-    private TextMesh samText;
-    private TextMesh obamaText;
-    private TextMesh liamText;
-    private TextMesh morganText;
+    private TextMeshPro samText;
+    private TextMeshPro obamaText;
+    private TextMeshPro liamText;
+    private TextMeshPro morganText;
     private const float INTENSELIGHT = 5f;
 
     // Use this for initialization
@@ -27,10 +28,10 @@ public class Pressable : MonoBehaviour {
         light2 = GameObject.Find("light_wall_2").transform.GetChild(0).GetComponent<Light>();
         light3 = GameObject.Find("light_wall_3").transform.GetChild(0).GetComponent<Light>();
         light4 = GameObject.Find("light_wall_4").transform.GetChild(0).GetComponent<Light>();
-        samText = GameObject.Find("decorative_table_glass 1").transform.GetChild(0).GetComponent<TextMesh>();
-        obamaText = GameObject.Find("decorative_table_glass 1").transform.GetChild(1).GetComponent<TextMesh>();
-        liamText = GameObject.Find("decorative_table_glass 1").transform.GetChild(2).GetComponent<TextMesh>();
-        morganText = GameObject.Find("decorative_table_glass 1").transform.GetChild(3).GetComponent<TextMesh>();
+        samText = GameObject.Find("decorative_table_glass 1").transform.GetChild(0).GetComponent<TextMeshPro>();
+        obamaText = GameObject.Find("decorative_table_glass 1").transform.GetChild(1).GetComponent<TextMeshPro>();
+        liamText = GameObject.Find("decorative_table_glass 1").transform.GetChild(2).GetComponent<TextMeshPro>();
+        morganText = GameObject.Find("decorative_table_glass 1").transform.GetChild(3).GetComponent<TextMeshPro>();
     }
 
     // Update is called once per frame
