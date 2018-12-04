@@ -6,11 +6,11 @@ using Valve.VR;
 public class SubmitController : MonoBehaviour
 {
 
-    public Light light1;
-    public Light light2;
-    public Light light3;
-    public Light light4;
-    public Light light5;
+    public GameObject light1;
+    public GameObject light2;
+    public GameObject light3;
+    public GameObject light4;
+    public GameObject light5;
 
     public GameObject messageScreen;
     
@@ -45,42 +45,20 @@ public class SubmitController : MonoBehaviour
 
         if (answer!=correctAnswer) //when the wrong sequence is entered false needs to be replaced
         {
-            counter = 1;
-            light1 = light1.GetComponent<Light>();
-            light1.intensity = 1.13f;
-            light1.color = Color.white;
-            light2 = light2.GetComponent<Light>();
-            light2.intensity = 1.13f;
-            light2.color = Color.white;
-            light3 = light3.GetComponent<Light>();
-            light3.intensity = 1.13f;
-            light3.color = Color.white;
-            light4 = light4.GetComponent<Light>();
-            light4.intensity = 1.13f;
-            light4.color = Color.white;
-            light5 = light5.GetComponent<Light>();
-            light5.intensity = 1.13f;
-            light5.color = Color.white;
+            light1.GetComponent<LighController>().setColor("white");
+            light2.GetComponent<LighController>().setColor("white");
+            light3.GetComponent<LighController>().setColor("white");
+            light4.GetComponent<LighController>().setColor("white");
+            light5.GetComponent<LighController>().setColor("white");
 
         }
         else
         {
-            light1 = light1.GetComponent<Light>();
-            light1.intensity = 1.13f;
-            light1.color = Color.green;
-            light2 = light2.GetComponent<Light>();
-            light2.intensity = 1.13f;
-            light2.color = Color.green;
-            light3 = light3.GetComponent<Light>();
-            light3.intensity = 1.13f;
-            light3.color = Color.green;
-            light4 = light4.GetComponent<Light>();
-            light4.intensity = 1.13f;
-            light4.color = Color.green;
-            light5 = light5.GetComponent<Light>();
-            light5.intensity = 1.13f;
-            light5.color = Color.green;
-
+            light1.GetComponent<LighController>().setColor("green");
+            light2.GetComponent<LighController>().setColor("green");
+            light3.GetComponent<LighController>().setColor("green");
+            light4.GetComponent<LighController>().setColor("green");
+            light5.GetComponent<LighController>().setColor("green");
             counter = 1;
 
         }
@@ -100,29 +78,19 @@ public class SubmitController : MonoBehaviour
         switch (counter)
         {
             case 1:
-                light1 = light1.GetComponent<Light>();
-                light1.intensity = 1.13f;
-                light1.color = Color.blue;
+                light1.GetComponent<LighController>().setColor("blue");
                 break;
             case 2:
-                light2 = light1.GetComponent<Light>();
-                light2.intensity = 1.13f;
-                light2.color = Color.blue;
+                light1.GetComponent<LighController>().setColor("blue");
                 break;
             case 3:
-                light3 = light1.GetComponent<Light>();
-                light3.intensity = 1.13f;
-                light3.color = Color.blue;
+                light1.GetComponent<LighController>().setColor("blue");
                 break;
             case 4:
-                light4 = light1.GetComponent<Light>();
-                light4.intensity = 1.13f;
-                light4.color = Color.blue;
+                light1.GetComponent<LighController>().setColor("blue");
                 break;
             case 5:
-                light5 = light1.GetComponent<Light>();
-                light5.intensity = 1.13f;
-                light5.color = Color.blue;
+                light1.GetComponent<LighController>().setColor("blue");
                 break;
         }
 
