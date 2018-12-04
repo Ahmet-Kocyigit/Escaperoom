@@ -20,8 +20,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4744854416632386}
   - component: {fileID: 108305406719740236}
-  - component: {fileID: 135821404909527958}
   - component: {fileID: 114842352763639466}
+  - component: {fileID: 65126460566511076}
   m_Layer: 0
   m_Name: Point light
   m_TagString: Untagged
@@ -68,8 +68,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1239551856392766}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.019, z: 0.02}
-  m_LocalScale: {x: 1.1983, y: 7.991063, z: 2.7298868}
+  m_LocalPosition: {x: 0, y: -2.82, z: 0.02}
+  m_LocalScale: {x: 0.82380724, y: 7.991063, z: 2.3058224}
   m_Children: []
   m_Father: {fileID: 4531327539909966}
   m_RootOrder: 0
@@ -118,6 +118,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1499768665627528}
   m_Mesh: {fileID: 4300000, guid: f9a81df43f44a034bb591be3029197f1, type: 3}
+--- !u!65 &65126460566511076
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1239551856392766}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65881857726782868
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -141,7 +153,7 @@ Light:
   m_Type: 2
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_Intensity: 1.06
-  m_Range: 4.0749807
+  m_Range: 2.5610688
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -178,15 +190,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e5e8e0a1eeede244ad5f75e578826d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!135 &135821404909527958
-SphereCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1239551856392766}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
+  isActive: 0
