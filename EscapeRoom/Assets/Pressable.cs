@@ -62,7 +62,14 @@ public class Pressable : MonoBehaviour {
                     transform.Rotate(180, 0, 0);
                     CanPress = false;
                     IsOn = false;
-                    RenderSettings.ambientLight = Color.white;
+                    light1 = GameObject.Find("light_wall_1").transform.GetChild(0).GetComponent<Light>();
+                    light1.color = Color.white;
+                    light2 = GameObject.Find("light_wall_2").transform.GetChild(0).GetComponent<Light>();
+                    light2.color = Color.white;
+                    light3 = GameObject.Find("light_wall_3").transform.GetChild(0).GetComponent<Light>();
+                    light3.color = Color.white;
+                    light4 = GameObject.Find("light_wall_4").transform.GetChild(0).GetComponent<Light>();
+                    light4.color = Color.white;
                 }
             }
            
