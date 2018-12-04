@@ -25,24 +25,27 @@ public class LightCollision : MonoBehaviour {
 
     void OnCollisionEnter(Collision collision)
     {
+        print("Called OnCollisionEnter");
         if (isActive)
         {
-            switch (collision.collider.gameObject.name)
+            print("Entered if statement");
+            print(collision.collider.gameObject.name);
+            switch (collision.collider.gameObject.transform.GetChild(collision.collider.gameObject.transform.childCount - 1).name)
             {
                 case "Samuel":
-                    samText.text = "3456";
+                    samText.text = "SAMUEL";
                     samText.color = Color.magenta;
                     break;
                 case "Morgan":
-                    morganText.text = "2255";
+                    morganText.text = "MORGAN";
                     morganText.color = Color.magenta;
                     break;
                 case "Liam":
-                    liamText.text = "3458";
+                    liamText.text = "LIAM";
                     liamText.color = Color.magenta;
                     break;
                 case "Obama":
-                    obamaText.text = "9874";
+                    obamaText.text = "OBAMA";
                     obamaText.color = Color.magenta;
                     break;
                 default:
@@ -54,9 +57,10 @@ public class LightCollision : MonoBehaviour {
 
     void OnCollisionExit(Collision collision)
     {
+        print("Called OnCollisionExit");
         if (isActive)
         {
-            switch (collision.collider.gameObject.name)
+            switch (collision.collider.gameObject.transform.GetChild(collision.collider.gameObject.transform.childCount - 1).name)
             {
                 case "Samuel":
                     samText.text = "";
