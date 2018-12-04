@@ -14,10 +14,8 @@ public class Pressable : MonoBehaviour {
     private Light light1;
     private Light light2;
     private Light UvLight;
-    private TextMeshPro samText;
-    private TextMeshPro obamaText;
-    private TextMeshPro liamText;
-    private TextMeshPro morganText;
+    private LightCollision lightCollider;
+    
     private const float INTENSELIGHT = 3f;
 
     // Use this for initialization
@@ -26,10 +24,7 @@ public class Pressable : MonoBehaviour {
         light1 = GameObject.Find("CeilingLight").transform.GetChild(0).GetComponent<Light>();
         light2 = GameObject.Find("CeilingLight2").transform.GetChild(0).GetComponent<Light>();
         UvLight = GameObject.Find("UVLight").transform.GetChild(0).GetComponent<Light>();
-        samText = GameObject.Find("decorative_table_glass 1").transform.GetChild(0).GetChild(0).GetComponent<TextMeshPro>();
-        obamaText = GameObject.Find("decorative_table_glass 1").transform.GetChild(1).GetChild(0).GetComponent<TextMeshPro>();
-        liamText = GameObject.Find("decorative_table_glass 1").transform.GetChild(2).GetChild(0).GetComponent<TextMeshPro>();
-        morganText = GameObject.Find("decorative_table_glass 1").transform.GetChild(3).GetChild(0).GetComponent<TextMeshPro>();
+        lightCollider = UvLight.transform.GetChild(0).GetComponent<LightCollision>();
     }
 
     // Update is called once per frame
@@ -61,11 +56,7 @@ public class Pressable : MonoBehaviour {
                     light2.color = Color.black;
                     UvLight.color = Color.magenta;
                     UvLight.intensity = INTENSELIGHT;
-
-                    samText.text = "3456";
-                    obamaText.text = "9874";
-                    liamText.text = "3458";
-                    morganText.text = "2255";
+                    lightCollider.isActive = true;
                 }
             }
             else
@@ -78,11 +69,8 @@ public class Pressable : MonoBehaviour {
                     
                     light1.color = Color.white;
                     light2.color = Color.white;
-
-                    samText.text = "";
-                    obamaText.text = "";
-                    liamText.text = "";
-                    morganText.text = "";
+                    UvLight.color = Color.black;
+                    lightCollider.isActive = false;
                 }
             }
            
