@@ -26,7 +26,7 @@ public class Pressable : MonoBehaviour {
         light1 = GameObject.Find("CeilingLight").transform.GetChild(0).GetComponent<Light>();
         light2 = GameObject.Find("CeilingLight2").transform.GetChild(0).GetComponent<Light>();
         UvLight = GameObject.Find("UVLight").transform.GetChild(0).GetComponent<Light>();
-        distanceCalculator = GameObject.Find("UVLight").transform.GetChild(0).GetComponent<DistanceCalculator>();
+        distanceCalculator = GameObject.Find("UVLight").GetComponent<DistanceCalculator>();
     }
 
     // Update is called once per frame

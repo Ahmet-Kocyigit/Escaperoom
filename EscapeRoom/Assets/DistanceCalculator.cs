@@ -47,6 +47,49 @@ public class DistanceCalculator : MonoBehaviour
     private void CalculateDistance(Transform otherObject)
     {
         float distance = Vector3.Distance(otherObject.position, transform.position);
-        print("Distance to " + otherObject.name + " : " + distance);
+        if (distance < 3)
+        {
+            switch (otherObject.name)
+            {
+                case "Samuel":
+                    samText.text = "SAMUEL";
+                    samText.color = Color.magenta;
+                    break;
+                case "Morgan":
+                    morganText.text = "MORGAN";
+                    morganText.color = Color.magenta;
+                    break;
+                case "Liam":
+                    liamText.text = "LIAM";
+                    liamText.color = Color.magenta;
+                    break;
+                case "Obama":
+                    obamaText.text = "OBAMA";
+                    obamaText.color = Color.magenta;
+                    break;
+                default:
+                    return;
+            }
+        }
+        else
+        {
+            switch (otherObject.name)
+            {
+                case "Samuel":
+                    samText.text = "";
+                    break;
+                case "Morgan":
+                    morganText.text = "";
+                    break;
+                case "Liam":
+                    liamText.text = "";
+                    break;
+                case "Obama":
+                    obamaText.text = "";
+                    break;
+                default:
+                    return;
+            }
+        }
     }
 }
