@@ -32,11 +32,14 @@ public class ConsoleController : MonoBehaviour
 
     void OnCollisionEnter(Collision col)
     {
+        print(col.gameObject.ToString());
+
         if (col.gameObject.GetComponent<ValueController>() != null)
         {
             if (CanAnswer)
             {
                 int console = Convert.ToInt32(GetComponent<ValueController>().value);
+                print("Console: " + console + " set to " + col.gameObject.GetComponent<ValueController>().value.ToString());
                 GameObject.Find("big_screen").transform.GetChild(0).GetComponent<QuestionController>().CheckAnswer(col.gameObject.GetComponent<ValueController>().value, console);
                 CanAnswer = false;
             }

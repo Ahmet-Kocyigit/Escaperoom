@@ -12,7 +12,7 @@ public class smartphone : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        _error.active = false;
+        _error.active = true;
         _samuel.active = false;
         _called = true;
 

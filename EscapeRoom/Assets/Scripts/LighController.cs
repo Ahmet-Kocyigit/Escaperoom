@@ -27,7 +27,10 @@ public class LighController : MonoBehaviour
         {
             case "blue":
                 var comp = gameObject.GetComponent<MeshRenderer>();
-                gameObject.GetComponent<MeshRenderer>().sharedMaterials[2] = blue;
+                var mat =comp.materials[2];
+
+                mat = blue;
+                comp.materials[2] = mat;
                 break;
             case "white":
                 gameObject.GetComponent<MeshRenderer>().sharedMaterials[2] = white;
