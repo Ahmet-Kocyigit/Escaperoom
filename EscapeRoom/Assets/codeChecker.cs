@@ -10,13 +10,15 @@ public class codeChecker : MonoBehaviour
     private int max_time = 5;
     private float timer = 0f;
     private bool CanPress = true;
+    private bool secondInputIsActivated;
 
 
     // Use this for initialization
     void Start () {
 		input = gameObject.transform.GetComponent<TextMeshPro>();
 	    firstInputIsCorrect = false;
-	}
+        secondInputIsActivated = false;
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -37,12 +39,16 @@ public class codeChecker : MonoBehaviour
 	            {
 	                input.text = "";
 	                CanPress = true;
+	                secondInputIsActivated = true;
 	            }
 	        }
-	        if (input.text.Equals("4321"))
+
+	        if (secondInputIsActivated)
 	        {
-	            input.text = "Correct!";
-	            firstInputIsCorrect = true;
+	            if (input.text.Equals("4321"))
+	            {
+	                input.text = "Correct!";
+	            }
 	        }
         }
 	    
