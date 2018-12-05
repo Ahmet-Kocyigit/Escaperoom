@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class BoxScript : MonoBehaviour
 {
-    GameObject _boxPartTop;
+    public GameObject _boxPartTop;
 
 	// Use this for initialization
 	void Start () {
-		
+        OpenBox();
 	}
 	
 	// Update is called once per frame

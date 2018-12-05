@@ -26,13 +26,14 @@ public class LighController : MonoBehaviour
         switch (s)
         {
             case "blue":
-                gameObject.GetComponent<MeshRenderer>().materials[2].color = Color.blue;
+                var comp = gameObject.GetComponent<MeshRenderer>();
+                gameObject.GetComponent<MeshRenderer>().materials[2] = blue;
                 break;
             case "white":
-                gameObject.GetComponent<MeshRenderer>().materials[2].color = Color.white;
+                gameObject.GetComponent<MeshRenderer>().materials[2] = white;
                 break;
             case "green":
-                gameObject.GetComponent<MeshRenderer>().materials[2].color = Color.green;
+                gameObject.GetComponent<MeshRenderer>().materials[2] = green;
                 break;
         }
 

@@ -2,17 +2,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Valve.VR;
 
 public class smartphone : MonoBehaviour {
 
-    GameObject _samuel;
-    GameObject _error;
-    Boolean _called;
+    public GameObject _samuel;
+    public GameObject _error;
+    public Boolean _called;
     // Use this for initialization
     void Start()
     {
         _error.active = false;
         _samuel.active = false;
+        _called = true;
+
     }
 
     // Update is called once per frame
@@ -23,15 +26,19 @@ public class smartphone : MonoBehaviour {
 
     void OnCollisionEnter(Collision col)
     {
-        if (!_called)
+        if (SteamVR_Input.__actions_default_in_GrabPinch.GetStateDown(SteamVR_Input_Sources.Any))
         {
-            _samuel.active = false;
-            _error.active = true;
-        }
-        else
-        {
-            _samuel.active = true;
-            _error.active = false;
+
+            if (!_called)
+            {
+                _samuel.active = false;
+                _error.active = true;
+            }
+            else
+            {
+                _samuel.active = true;
+                _error.active = false;
+            }
         }
 
     }

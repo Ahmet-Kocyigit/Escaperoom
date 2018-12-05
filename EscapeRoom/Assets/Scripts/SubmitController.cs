@@ -68,13 +68,13 @@ public class SubmitController : MonoBehaviour
 
     public void addAnswer(string value)
     {
-        if (counter < 5)
-        {
+        if (counter >5)
+       {
             return;
         }
 
         this.answer += value;
-
+        messageScreen.gameObject.GetComponent<TextMesh>().text = answer;
         switch (counter)
         {
             case 1:

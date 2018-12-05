@@ -25,11 +25,12 @@ public class LightCollision : MonoBehaviour {
 
     void OnCollisionEnter(Collision collision)
     {
-        print("Called OnCollisionEnter");
+
+        print("called oncollisionenter");
         if (isActive)
         {
-            print("Entered if statement");
-            print(collision.collider.gameObject.name);
+            print("entered if");
+            print(collision.collider.gameObject.transform.GetChild(collision.collider.gameObject.transform.childCount - 1).name);
             switch (collision.collider.gameObject.transform.GetChild(collision.collider.gameObject.transform.childCount - 1).name)
             {
                 case "Samuel":
@@ -60,6 +61,7 @@ public class LightCollision : MonoBehaviour {
         print("Called OnCollisionExit");
         if (isActive)
         {
+
             switch (collision.collider.gameObject.transform.GetChild(collision.collider.gameObject.transform.childCount - 1).name)
             {
                 case "Samuel":

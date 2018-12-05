@@ -22,6 +22,7 @@ public class verifyObjectController : MonoBehaviour {
         {
             var text = collision.gameObject.GetComponent<ValueController>().getvalue();
             submitter.GetComponent<SubmitController>().addAnswer(text);
+            print(text);
 
         }
     }
