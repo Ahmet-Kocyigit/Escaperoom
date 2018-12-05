@@ -14,14 +14,13 @@ public class smartphone : MonoBehaviour {
     {
         _error.active = false;
         _samuel.active = false;
-        _called = true;
+        _called = false;
 
     }
 
     // Update is called once per frame
     void Update()
     {
-
     }
 
     void OnCollisionEnter(Collision col)
