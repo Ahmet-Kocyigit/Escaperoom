@@ -14,7 +14,7 @@ public class Pressable : MonoBehaviour {
     private Light light1;
     private Light light2;
     private Light UvLight;
-    private LightCollision lightCollider;
+    private DistanceCalculator distanceCalculator;
     public AudioClip clip;
     public AudioSource source;
 
@@ -26,7 +26,7 @@ public class Pressable : MonoBehaviour {
         light1 = GameObject.Find("CeilingLight").transform.GetChild(0).GetComponent<Light>();
         light2 = GameObject.Find("CeilingLight2").transform.GetChild(0).GetComponent<Light>();
         UvLight = GameObject.Find("UVLight").transform.GetChild(0).GetComponent<Light>();
-        lightCollider = GameObject.Find("UVLight").transform.GetChild(0).GetComponent<LightCollision>();
+        distanceCalculator = GameObject.Find("UVLight").transform.GetChild(0).GetComponent<DistanceCalculator>();
     }
 
     // Update is called once per frame
@@ -61,7 +61,7 @@ public class Pressable : MonoBehaviour {
                     light2.color = Color.black;
                     UvLight.color = Color.magenta;
                     UvLight.intensity = INTENSELIGHT;
-                    lightCollider.isActive = true;
+                    distanceCalculator.isActive = true;
                 }
             }
             else
@@ -69,6 +69,7 @@ public class Pressable : MonoBehaviour {
                 if (SteamVR_Input.__actions_default_in_GrabPinch.GetStateDown(SteamVR_Input_Sources.Any))
                 {
                     source.Play();
+
                     transform.Rotate(180, 0, 0);
                     CanPress = false;
                     IsOn = false;
@@ -76,7 +77,7 @@ public class Pressable : MonoBehaviour {
                     light1.color = Color.white;
                     light2.color = Color.white;
                     UvLight.color = Color.black;
-                    lightCollider.isActive = false;
+                    distanceCalculator.isActive = false;
                 }
             }
            

@@ -23,7 +23,7 @@ public class LightCollision : MonoBehaviour {
 		
 	}
 
-    void OnCollisionEnter(Collision collision)
+    /*void OnCollisionEnter(Collision collision)
     {
 
         print("called oncollisionenter");
@@ -81,5 +81,5 @@ public class LightCollision : MonoBehaviour {
             }
         }
        
-    }
+    }*/
 }
