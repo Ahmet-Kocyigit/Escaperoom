@@ -8,7 +8,7 @@ public class BoxScript : MonoBehaviour
 
 	// Use this for initialization
 	void Start () {
-        OpenBox();
+        
 	}
 	
 	// Update is called once per frame
@@ -16,7 +16,7 @@ public class BoxScript : MonoBehaviour
 		
 	}
 
-    void OpenBox()
+    public void OpenBox()
     {
         _boxPartTop.transform.Rotate(0,0,90);
         _boxPartTop.transform.position = new Vector3(-0.5f,0f,0f);

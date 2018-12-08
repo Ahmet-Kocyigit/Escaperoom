@@ -9,13 +9,15 @@ public class smartphone : MonoBehaviour {
     public GameObject _samuel;
     public GameObject _error;
     public Boolean _called;
+    public AudioClip clip;
+    public AudioSource source;
     // Use this for initialization
     void Start()
     {
         _error.active = true;
         _samuel.active = false;
         _called = false;
-
+        source.clip = clip;
     }
 
     // Update is called once per frame
@@ -47,5 +49,6 @@ public class smartphone : MonoBehaviour {
         _samuel.active = true;
         _error.active = false;
         _called = true;
+        source.Play();
     }
 }

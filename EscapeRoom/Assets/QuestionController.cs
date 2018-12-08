@@ -59,8 +59,8 @@ public class QuestionController : MonoBehaviour {
 
         if (corrects[0] && corrects[1] && corrects[2])
         {
-            source.Play();
-            //open box
+            
+            box.GetComponent<BoxScript>().OpenBox();
             GetComponent<TextMesh>().text = "Correct!";
 
            sourcePhone.Play();

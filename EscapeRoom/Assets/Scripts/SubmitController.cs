@@ -46,6 +46,7 @@ public class SubmitController : MonoBehaviour
 
         if (answer != correctAnswer) //when the wrong sequence is entered false needs to be replaced
         {
+            answer = "";
             light1.GetComponent<LighController>().setColor("white");
             light2.GetComponent<LighController>().setColor("white");
             light3.GetComponent<LighController>().setColor("white");
@@ -53,7 +54,7 @@ public class SubmitController : MonoBehaviour
             light5.GetComponent<LighController>().setColor("white");
 
 
-            messageScreen.gameObject.GetComponent<TextMeshPro>().text = "wrong answer";
+            messageScreen.gameObject.GetComponent<TextMeshPro>().text = errormessage;
 
         }
         else
