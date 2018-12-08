@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using Valve.VR;
+using Valve.VR.InteractionSystem;
 
 public class SubmitController : MonoBehaviour
 {
@@ -19,14 +21,17 @@ public class SubmitController : MonoBehaviour
     public string correctAnswer;
 
     public string errormessage;
-
+    public bool isSolved =false;
     private int counter = 1;
+
+    public HoverButton hoverButton;
 
 
     // Use this for initialization
     void Start()
     {
 
+        hoverButton.onButtonDown.AddListener(OnButtonDown);
     }
 
     // Update is called once per frame
@@ -35,15 +40,11 @@ public class SubmitController : MonoBehaviour
 
     }
 
-    void OnCollisionEnter(Collision collision)
+    private void OnButtonDown(Hand hand)
     {
+        
 
-        if (!SteamVR_Input.__actions_default_in_GrabPinch.GetStateDown(SteamVR_Input_Sources.Any))
-        {
-            return;
-        }
-
-        if (answer!=correctAnswer) //when the wrong sequence is entered false needs to be replaced
+        if (answer != correctAnswer) //when the wrong sequence is entered false needs to be replaced
         {
             light1.GetComponent<LighController>().setColor("white");
             light2.GetComponent<LighController>().setColor("white");
@@ -51,9 +52,13 @@ public class SubmitController : MonoBehaviour
             light4.GetComponent<LighController>().setColor("white");
             light5.GetComponent<LighController>().setColor("white");
 
+
+            messageScreen.gameObject.GetComponent<TextMeshPro>().text = "wrong answer";
+
         }
         else
         {
+            answer = "";
             light1.GetComponent<LighController>().setColor("green");
             light2.GetComponent<LighController>().setColor("green");
             light3.GetComponent<LighController>().setColor("green");
@@ -61,20 +66,31 @@ public class SubmitController : MonoBehaviour
             light5.GetComponent<LighController>().setColor("green");
             counter = 1;
 
+            isSolved = true;
+
+            messageScreen.gameObject.GetComponent<TextMeshPro>().text = "correct answer";
+
         }
 
         return;
     }
 
+
+    void OnCollisionEnter(Collision collision)
+    {
+    }
+
     public void addAnswer(string value)
     {
+        if (isSolved)
+            return;
+
         if (counter >5)
        {
             return;
         }
 
         this.answer += value;
-        messageScreen.gameObject.GetComponent<TextMesh>().text = answer;
         switch (counter)
         {
             case 1:

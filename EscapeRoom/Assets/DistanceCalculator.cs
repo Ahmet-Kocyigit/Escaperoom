@@ -47,7 +47,9 @@ public class DistanceCalculator : MonoBehaviour
     private void CalculateDistance(Transform otherObject)
     {
         float distance = Vector3.Distance(otherObject.position, transform.position);
-        if (distance < 3)
+        print(distance + "hallo robin" + otherObject.name);
+
+        if (distance < 6)
         {
             switch (otherObject.name)
             {

@@ -26,4 +26,15 @@ public class verifyObjectController : MonoBehaviour {
 
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.GetComponent<ValueController>() != null)
+        {
+            var text = other.gameObject.GetComponent<ValueController>().getvalue();
+            submitter.GetComponent<SubmitController>().addAnswer(text);
+            print(text);
+
+        }
+    }
 }

@@ -999,6 +999,7 @@ MonoBehaviour:
   answer: 
   correctAnswer: swagger
   errormessage: get fucked
+  isSolved: 0
 --- !u!114 &114173859731036810
 MonoBehaviour:
   m_ObjectHideFlags: 1
