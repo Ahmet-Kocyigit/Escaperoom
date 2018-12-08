@@ -81,16 +81,16 @@ public class SubmitController : MonoBehaviour
                 light1.GetComponent<LighController>().setColor("blue");
                 break;
             case 2:
-                light1.GetComponent<LighController>().setColor("blue");
+                light2.GetComponent<LighController>().setColor("blue");
                 break;
             case 3:
-                light1.GetComponent<LighController>().setColor("blue");
+                light3.GetComponent<LighController>().setColor("blue");
                 break;
             case 4:
-                light1.GetComponent<LighController>().setColor("blue");
+                light4.GetComponent<LighController>().setColor("blue");
                 break;
             case 5:
-                light1.GetComponent<LighController>().setColor("blue");
+                light5.GetComponent<LighController>().setColor("blue");
                 break;
         }
 

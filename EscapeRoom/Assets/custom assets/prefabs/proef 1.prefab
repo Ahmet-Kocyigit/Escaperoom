@@ -26,7 +26,6 @@ GameObject:
   - component: {fileID: 114138159547026020}
   - component: {fileID: 114707760865339080}
   - component: {fileID: 114662094184187960}
-  - component: {fileID: 114563181143388334}
   - component: {fileID: 114198900896182708}
   m_Layer: 0
   m_Name: Answer (5)
@@ -316,7 +315,6 @@ GameObject:
   - component: {fileID: 114221253050944520}
   - component: {fileID: 114498341819413188}
   - component: {fileID: 114802037533853352}
-  - component: {fileID: 114100462497069506}
   - component: {fileID: 114839537686703668}
   m_Layer: 0
   m_Name: Answer (2)
@@ -405,7 +403,6 @@ GameObject:
   - component: {fileID: 114051780300735314}
   - component: {fileID: 114163857033400092}
   - component: {fileID: 114451733175192332}
-  - component: {fileID: 114466174838866438}
   - component: {fileID: 114715072746649966}
   m_Layer: 0
   m_Name: Answer (3)
@@ -429,7 +426,6 @@ GameObject:
   - component: {fileID: 114876981479126494}
   - component: {fileID: 114265907946965268}
   - component: {fileID: 114143230050477162}
-  - component: {fileID: 114630460402796966}
   - component: {fileID: 114219335771290168}
   m_Layer: 0
   m_Name: Answer (4)
@@ -488,7 +484,6 @@ GameObject:
   - component: {fileID: 114044287893722988}
   - component: {fileID: 114988031366714242}
   - component: {fileID: 114888970677177534}
-  - component: {fileID: 114330426199472038}
   m_Layer: 0
   m_Name: Answer
   m_TagString: Untagged
@@ -549,7 +544,6 @@ GameObject:
   - component: {fileID: 114859724690460454}
   - component: {fileID: 114993964802253536}
   - component: {fileID: 114114102792686188}
-  - component: {fileID: 114031912201039270}
   - component: {fileID: 114442684527151088}
   m_Layer: 0
   m_Name: Answer (1)
@@ -671,7 +665,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1558879954535172}
   m_LocalRotation: {x: -0, y: -0, z: -0.7059536, w: -0.70825815}
-  m_LocalPosition: {x: 3.883317, y: 2.7138333, z: -3.1381254}
+  m_LocalPosition: {x: 3.883317, y: 2.7138333, z: -4.01}
   m_LocalScale: {x: 2.3694422, y: 2.3694422, z: 0.27722463}
   m_Children:
   - {fileID: 4402939203217164}
@@ -2301,7 +2295,7 @@ AudioListener:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1529307075516208}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!82 &82561846944295500
 AudioSource:
   m_ObjectHideFlags: 1
@@ -2450,29 +2444,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22b438c3ba36e594590805a8f4d4e4f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114031912201039270
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1921490288619310}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b93b6a877adcbf94c89a9d6e0c0e844d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  activateActionSetOnAttach: {fileID: 0}
-  hideHandOnAttach: 1
-  hideSkeletonOnAttach: 0
-  hideControllerOnAttach: 0
-  handAnimationOnPickup: 0
-  setRangeOfMotionOnPickup: -1
-  useHandObjectAttachmentPoint: 1
-  handFollowTransform: {fileID: 0}
-  handFollowTransformPosition: 1
-  handFollowTransformRotation: 1
-  highlightOnHover: 1
-  hideHighlight: []
 --- !u!114 &114034395305034214
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2623,29 +2594,6 @@ MonoBehaviour:
   velocityAverageFrames: 5
   angularVelocityAverageFrames: 11
   estimateOnAwake: 0
---- !u!114 &114100462497069506
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1416570194076876}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b93b6a877adcbf94c89a9d6e0c0e844d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  activateActionSetOnAttach: {fileID: 0}
-  hideHandOnAttach: 1
-  hideSkeletonOnAttach: 0
-  hideControllerOnAttach: 0
-  handAnimationOnPickup: 0
-  setRangeOfMotionOnPickup: -1
-  useHandObjectAttachmentPoint: 1
-  handFollowTransform: {fileID: 0}
-  handFollowTransformPosition: 1
-  handFollowTransformRotation: 1
-  highlightOnHover: 1
-  hideHighlight: []
 --- !u!114 &114114102792686188
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3292,62 +3240,6 @@ MonoBehaviour:
   console3: {fileID: 1386292140622186}
   clip: {fileID: 8300000, guid: f330949066bae124bab6636f4a7a898e, type: 3}
   source: {fileID: 82561846944295500}
---- !u!114 &114330426199472038
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1770972633768984}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ffefbea063cab884ca33e5a449e5c22c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attachmentFlags: 44
-  attachmentOffset: {fileID: 0}
-  catchingSpeedThreshold: -1
-  releaseVelocityStyle: 1
-  releaseVelocityTimeOffset: -0.011
-  scaleReleaseVelocity: 1.1
-  restoreOriginalParent: 0
-  attachEaseIn: 0
-  snapAttachEaseInCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  snapAttachEaseInTime: 0.15
-  onPickUp:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  onDetachFromHand:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  snapAttachEaseInCompleted: 0
-  interactable: {fileID: 0}
 --- !u!114 &114414209846789756
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3427,29 +3319,6 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   snapAttachEaseInCompleted: 0
   interactable: {fileID: 0}
---- !u!114 &114466174838866438
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1629679605101422}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b93b6a877adcbf94c89a9d6e0c0e844d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  activateActionSetOnAttach: {fileID: 0}
-  hideHandOnAttach: 1
-  hideSkeletonOnAttach: 0
-  hideControllerOnAttach: 0
-  handAnimationOnPickup: 0
-  setRangeOfMotionOnPickup: -1
-  useHandObjectAttachmentPoint: 1
-  handFollowTransform: {fileID: 0}
-  handFollowTransformPosition: 1
-  handFollowTransformRotation: 1
-  highlightOnHover: 1
-  hideHighlight: []
 --- !u!114 &114498341819413188
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3611,29 +3480,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22b438c3ba36e594590805a8f4d4e4f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114563181143388334
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1072088659117512}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b93b6a877adcbf94c89a9d6e0c0e844d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  activateActionSetOnAttach: {fileID: 0}
-  hideHandOnAttach: 1
-  hideSkeletonOnAttach: 0
-  hideControllerOnAttach: 0
-  handAnimationOnPickup: 0
-  setRangeOfMotionOnPickup: -1
-  useHandObjectAttachmentPoint: 1
-  handFollowTransform: {fileID: 0}
-  handFollowTransformPosition: 1
-  handFollowTransformRotation: 1
-  highlightOnHover: 1
-  hideHighlight: []
 --- !u!114 &114565453635416606
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3872,29 +3718,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   m_maskType: 0
---- !u!114 &114630460402796966
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1637387252261784}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b93b6a877adcbf94c89a9d6e0c0e844d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  activateActionSetOnAttach: {fileID: 0}
-  hideHandOnAttach: 1
-  hideSkeletonOnAttach: 0
-  hideControllerOnAttach: 0
-  handAnimationOnPickup: 0
-  setRangeOfMotionOnPickup: -1
-  useHandObjectAttachmentPoint: 1
-  handFollowTransform: {fileID: 0}
-  handFollowTransformPosition: 1
-  handFollowTransformRotation: 1
-  highlightOnHover: 1
-  hideHighlight: []
 --- !u!114 &114662094184187960
 MonoBehaviour:
   m_ObjectHideFlags: 1
