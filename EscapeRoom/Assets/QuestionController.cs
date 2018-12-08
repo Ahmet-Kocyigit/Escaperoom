@@ -28,10 +28,14 @@ public class QuestionController : MonoBehaviour {
     public AudioClip clip;
     public AudioSource source;
 
+    public AudioSource sourcePhone;
+    public AudioClip ringtone;
+
     void Start ()
 	{
 	    GetComponent<TextMesh>().text = "What is missing?" + Environment.NewLine + "1. application" + Environment.NewLine + "2. Presentation" + Environment.NewLine + "3. ?" + Environment.NewLine + "4. ?" + Environment.NewLine + "5. ?" + Environment.NewLine + "6. Data link" + Environment.NewLine + "7. Physical";
 	    source.clip = clip;
+	    sourcePhone.clip = ringtone;
 	}
 	
 	// Update is called once per frame
@@ -59,6 +63,7 @@ public class QuestionController : MonoBehaviour {
             //open box
             GetComponent<TextMesh>().text = "Correct!";
 
+           sourcePhone.Play();
         }
     }
 }
