@@ -59,11 +59,9 @@ public class QuestionController : MonoBehaviour {
 
         if (corrects[0] && corrects[1] && corrects[2])
         {
-            
+            source.Play();
             box.GetComponent<BoxScript>().OpenBox();
-            GetComponent<TextMesh>().text = "Correct!";
-
-           sourcePhone.Play();
+            GetComponent<TextMesh>().text = "I've had it with these \n motherfucking snakes on\n this motherfucking plane!";
         }
     }
 }

@@ -44,7 +44,7 @@ public class smartphone : MonoBehaviour {
 
     }
 
-    void CallSam()
+    public void CallSam()
     {
         _samuel.active = true;
         _error.active = false;

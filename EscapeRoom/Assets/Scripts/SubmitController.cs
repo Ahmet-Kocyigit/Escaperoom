@@ -13,6 +13,7 @@ public class SubmitController : MonoBehaviour
     public GameObject light3;
     public GameObject light4;
     public GameObject light5;
+    public GameObject door;
 
     public GameObject messageScreen;
     
@@ -55,7 +56,6 @@ public class SubmitController : MonoBehaviour
 
 
             messageScreen.gameObject.GetComponent<TextMeshPro>().text = errormessage;
-
         }
         else
         {
@@ -68,6 +68,7 @@ public class SubmitController : MonoBehaviour
             counter = 1;
 
             isSolved = true;
+            door.GetComponent<DoorController>().OpenDoor();
 
             messageScreen.gameObject.GetComponent<TextMeshPro>().text = "correct answer";
 

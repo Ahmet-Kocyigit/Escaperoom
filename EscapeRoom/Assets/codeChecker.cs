@@ -10,6 +10,8 @@ public class codeChecker : MonoBehaviour
     private TextMeshPro input;
     private bool firstInputIsCorrect;
     private bool secondInputIsActivated;
+    public GameObject phone;
+    public GameObject scanningStation;
 
 
     // Use this for initialization
@@ -28,6 +30,7 @@ public class codeChecker : MonoBehaviour
 	            input.text = "";
 	            firstInputIsCorrect = true;
 	            secondInputIsActivated = true;
+                phone.GetComponent<smartphone>().CallSam();
             }
         }
 
@@ -36,6 +39,7 @@ public class codeChecker : MonoBehaviour
 	            if (input.text.Equals(secondCode))
 	            {
 	                input.text = "Correct!";
+                    scanningStation.GetComponent<SnapController>().enable();
 	            }
 	        }
         }
