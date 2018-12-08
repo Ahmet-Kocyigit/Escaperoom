@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using Valve.VR;
 
@@ -22,7 +23,16 @@ public class SnapController : MonoBehaviour
         if (collision.gameObject.GetComponent<ValueController>() != null)
         {
             var text =collision.gameObject.GetComponent<ValueController>().getvalue();
-            displayscreen.GetComponent<TextMesh>().text = text;
+            displayscreen.GetComponent<TextMeshPro>().text = text;
+        }
+    }
+
+    private void OnTriggerEnter(Collider collision)
+    {
+        if (collision.gameObject.GetComponent<ValueController>() != null)
+        {
+            var text = collision.gameObject.GetComponent<ValueController>().getvalue();
+            displayscreen.GetComponent<TextMeshPro>().text = text;
         }
     }
 }
