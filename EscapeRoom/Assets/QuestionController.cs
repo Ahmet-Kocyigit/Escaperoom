@@ -23,6 +23,8 @@ public class QuestionController : MonoBehaviour {
     public GameObject console2;
     public GameObject console3;
 
+    public GameObject box;
+
     public AudioClip clip;
     public AudioSource source;
 
