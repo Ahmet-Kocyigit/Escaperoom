@@ -15,8 +15,9 @@ public class QuestionController : MonoBehaviour {
 
     private bool[] corrects = {false, false, false};
 
-    private string[] answers = {"session", "transport", "network"};
-    
+    private string[] answers = {"Session", "Transport", "Network"};
+
+    public Boolean IsSolved = false;
 
     public  GameObject console1;
     public GameObject console2;
@@ -40,6 +41,11 @@ public class QuestionController : MonoBehaviour {
 
     public void CheckAnswer(string value, int consoleNumber)
     {
+        if (IsSolved)
+        {
+            return;
+        }
+
         if (value == answers[consoleNumber])
         {
             corrects[consoleNumber] = true;

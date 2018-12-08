@@ -13,7 +13,7 @@ public class ConsoleController : MonoBehaviour
 
 	// Use this for initialization
 	void Start () {
-		
+    
 	}
 	
 	// Update is called once per frame
@@ -32,11 +32,9 @@ public class ConsoleController : MonoBehaviour
 
     void OnCollisionEnter(Collision col)
     {
-        print(col.gameObject.ToString());
-
         if (col.gameObject.GetComponent<ValueController>() != null)
         {
-            if (CanAnswer)
+            if (true)
             {
                 int console = Convert.ToInt32(GetComponent<ValueController>().value);
                 print("Console: " + console + " set to " + col.gameObject.GetComponent<ValueController>().value.ToString());
