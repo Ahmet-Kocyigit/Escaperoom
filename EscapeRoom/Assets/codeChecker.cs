@@ -5,11 +5,10 @@ using UnityEngine;
 
 public class codeChecker : MonoBehaviour
 {
+    public string firstCode = "7368";
+    public string secondCode = "5050";
     private TextMeshPro input;
     private bool firstInputIsCorrect;
-    private int max_time = 5;
-    private float timer = 0f;
-    private bool CanPress = true;
     private bool secondInputIsActivated;
 
 
@@ -24,28 +23,17 @@ public class codeChecker : MonoBehaviour
 	void Update () {
 	    if (firstInputIsCorrect==false)
 	    {
-	        if (input.text.Equals("1234"))
+	        if (input.text.Equals(firstCode))
 	        {
-	            input.text = "Correct!";
+	            input.text = "";
 	            firstInputIsCorrect = true;
-	        }
+	            secondInputIsActivated = true;
+            }
         }
-	    else
-	    {
-	        if (!CanPress)
-	        {
-	            timer += Time.deltaTime;
-	            if (timer >= max_time)
-	            {
-	                input.text = "";
-	                CanPress = true;
-	                secondInputIsActivated = true;
-	            }
-	        }
 
-	        if (secondInputIsActivated)
+	    if (secondInputIsActivated)
 	        {
-	            if (input.text.Equals("4321"))
+	            if (input.text.Equals(secondCode))
 	            {
 	                input.text = "Correct!";
 	            }
@@ -53,4 +41,4 @@ public class codeChecker : MonoBehaviour
         }
 	    
 	}
-}
+
