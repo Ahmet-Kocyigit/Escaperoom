@@ -21,29 +21,23 @@ public class pressbutton : MonoBehaviour
 	}
 
     // Update is called once per frame
-    void Update () {
-        if (!CanPress)
-        {
-            timer += Time.deltaTime;
-            if (timer >= max_time)
-            {
-                CanPress = true;
-            }
-        }
-    }
+    
 
     void OnCollisionEnter(Collision collision)
     {
-        if (CanPress)
-        {
             if (SteamVR_Input.__actions_default_in_GrabPinch.GetStateDown(SteamVR_Input_Sources.Any))
             {
+
+            if (input.text.Equals("C"))
+            {
+                screen.text = "";
+                return;
+            }
                 inputString = input.text;
                 print(inputString);
                 screen.text += inputString;
             }
             
-        }
         
     }
 }
