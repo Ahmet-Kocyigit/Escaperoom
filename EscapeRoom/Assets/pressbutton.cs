@@ -35,7 +35,11 @@ public class pressbutton : MonoBehaviour
             }
                 inputString = input.text;
                 print(inputString);
+                if(screen.text.Length < 5 && screen.text != "Correct!")
+            {
                 screen.text += inputString;
+            }
+                
             }
             
         

@@ -13,6 +13,8 @@ public class codeChecker : MonoBehaviour
     public GameObject phone;
     public GameObject scanningStation;
 
+    public GameObject numPad;
+
 
     // Use this for initialization
     void Start () {
@@ -39,6 +41,7 @@ public class codeChecker : MonoBehaviour
 	            if (input.text.Equals(secondCode))
 	            {
 	                input.text = "Correct!";
+                    
                     scanningStation.GetComponent<SnapController>().enable();
 	            }
 	        }

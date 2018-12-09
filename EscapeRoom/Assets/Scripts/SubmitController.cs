@@ -53,7 +53,7 @@ public class SubmitController : MonoBehaviour
             light3.GetComponent<LighController>().setColor("white");
             light4.GetComponent<LighController>().setColor("white");
             light5.GetComponent<LighController>().setColor("white");
-
+            counter = 1;
 
             messageScreen.gameObject.GetComponent<TextMeshPro>().text = errormessage;
         }
